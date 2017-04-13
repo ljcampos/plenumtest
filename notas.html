@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+	<meta charset='UTF-8' />
+	<title>Plenum Store</title>
+	<link rel='stylesheet' href='dist/css/bootstrap.min.css' />
+	<link rel='stylesheet' href='dist/fontawesome/css/font-awesome.min.css' />
+</head>
+<body>
+	<header class='container'>
+		<h1 class='text-center'>Plenum Store</h1>
+		<nav navbar navbar-default>
+			<ul class="nav navbar-nav">
+				<li><a href='index.html'>Ventas</a></li>
+				<li><a href=''>Notas de venta</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class='container'>
+		<h3>Notas de venta</h3>
+		<div class='table-responsive'>
+			<table id='sellNoteTable' class='table'>
+				<thead>
+					<th>IdProducto</th>
+					<th>Nombre</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Total sin IVA</th>
+					<th>IVA</th>
+					<th>Total</th>
+					<th>Nombre del cajero</th>
+					<th>Fecha de venta</th>
+				</thead>
+				<tbody id='tblBody'>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<footer class='container'>
+		<div class='text-center'>
+			<p><strong>Plenum Store derechos reservados 2017</strong></p>
+		</div>
+	</footer>
+
+	<script src='dist/js/JQuery.js'></script>
+	<script src='dist/js/bootstrap.min.js'></script>
+
+	<script src='js/database.js'></script>
+	<script src='js/notes.js'></script>
+</body>
+</html>

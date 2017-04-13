@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+	<meta charset='UTF-8' />
+	<title>Plenum Store</title>
+	<link rel='stylesheet' href='dist/css/bootstrap.min.css' />
+	<link rel='stylesheet' href='dist/fontawesome/css/font-awesome.min.css' />
+</head>
+<body>
+	<header class='container'>
+		<h1 class='text-center'>Plenum Store</h1>
+		<nav navbar navbar-default>
+			<ul class="nav navbar-nav">
+				<li><a href='index.html'>Ventas</a></li>
+				<li><a href='notas.html'>Notas de venta</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class='container'>
+		<h3><strong>Datos de la compra</strong></h3>
+		<h2 class="text-danger">
+			<p>El <strong>ID</strong> de los productos es del <strong>1-7</strong></p>
+		</h2>
+		<div class='row'>
+			<label class='col-md-3'><strong>Cajero</strong></label>
+			<label id='SellerName' class='col-md-3'>Jose</label>
+			<label class='col-md-3'><strong>Fecha</strong></label>
+			<label id='SellDate' class='col-md-3'>12/12/12</label>
+		</div>
+		<hr />
+
+		<!-- Search section -->
+		<div class='row'>
+			<div class="col-md-10">
+				<input id='IdProducto' class='form-control' type='text' placeholder="IdProducto (1-7)" />
+			</div>
+			<div class='col-md-2'>
+				<button id='SeacrhProduct' class='btn btn-lg btn-info'><i class='fa fa-search'></i></button>
+			</div>
+		</div>
+
+		<!-- Add product section -->
+		<div class='row'>
+			<form id='productForm' class='form-horizontal' action='#'>
+				<div class='form-group'>
+					<label class="col-sm-2 control-label" for='ProductName'>Nombre del producto</label>
+					<div class="col-sm-8">
+						<input id='ProductName' type='text' class='form-control' disabled="true" placeholder="nombre" />
+					</div>
+				</div>
+
+				<div class='form-group'>
+					<label class="col-sm-2 control-label" for='ProductPrice'>Precio Unitario</label>
+					<div class="col-sm-8">
+						<input id='ProductPrice' type='number' class='form-control' disabled="true" placeholder="precio" />
+					</div>
+				</div>
+
+				<div class='form-group'>
+					<label class="col-sm-2 control-label" for='ProductLot'>Cantidad</label>
+					<div class="col-sm-8">
+						<input id='ProductLot' type='number' class='form-control' placeholder="Cantidad" />
+					</div>
+					<button id='LotCalculate' class='btn btn-primary'>Calcular</button>
+				</div>
+
+				<div class='form-group'>
+					<label class="col-sm-2 control-label" for='ProductNotIVA'>Total sin IVA</label>
+					<div class="col-sm-8">
+						<input id='ProductNotIVA' type='number' class='form-control' disabled="true" placeholder="Total sin IVA" />
+					</div>
+				</div>
+
+				<div class='form-group'>
+					<label class="col-sm-2 control-label" for='IVA'>IVA</label>
+					<div class="col-sm-8">
+						<input id='IVA' type='number' class='form-control' disabled="true" placeholder="IVA" value="16" />
+					</div>
+				</div>
+
+				<div class='form-group'>
+					<label class="col-sm-2 control-label" for='Total'>Total</label>
+					<div class="col-sm-8">
+						<input id='Total' type='number' class='form-control' disabled="true" placeholder="Total" />
+					</div>
+				</div>
+
+				<br />
+				<div class='form-group'>
+					<div class='col-sm-10'>
+						<div class='pull-right'>
+							<button id='AddProduct' class='btn btn-lg btn-success'>Agregar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<br />
+
+		<!-- Product sells list -->
+		<div class='row'>
+			<div class='pull-left'>
+				<h3><strong>Nota de venta</strong></h3>
+			</div>
+			<div class='pull-right'>
+				<button id='btnFinishSell' class='btn btn-lg btn-danger'><strong>Finalizar venta</strong></button>
+			</div>
+		</div>
+		<hr />
+		<div class='table-responsive'>
+			<table id='sellNoteTable' class='table'>
+				<thead>
+					<th>IdProducto</th>
+					<th>Nombre</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Total sin IVA</th>
+					<th>IVA</th>
+					<th>Total</th>
+					<th>Nombre del cajero</th>
+					<th>Fecha de venta</th>
+				</thead>
+				<tbody id='tblBody'>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<footer class='container'>
+		<div class='text-center'>
+			<p><strong>Plenum Store derechos reservados 2017</strong></p>
+		</div>
+	</footer>
+
+	<script src='dist/js/JQuery.js'></script>
+	<script src='dist/js/bootstrap.min.js'></script>
+
+	<script src='js/database.js'></script>
+	<script src='js/main.js'></script>
+</body>
+</html>
